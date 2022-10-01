@@ -125,6 +125,11 @@ public class viewProfile extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        tblEmp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblEmpMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tblEmp);
 
         varPhone.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -204,16 +209,12 @@ public class viewProfile extends javax.swing.JPanel {
                                 .addComponent(varDate, javax.swing.GroupLayout.Alignment.LEADING)))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(varId1)
-                                    .addComponent(varAge1)
-                                    .addComponent(varGender1)
-                                    .addComponent(varName1, javax.swing.GroupLayout.Alignment.TRAILING))
-                                .addGap(26, 26, 26))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(varDate1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(varId1, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE)
+                            .addComponent(varAge1)
+                            .addComponent(varGender1)
+                            .addComponent(varName1, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(varDate1))
+                        .addGap(26, 26, 26)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(varLevel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(varInfo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -356,16 +357,7 @@ public class viewProfile extends javax.swing.JPanel {
         }
         DefaultTableModel model=(DefaultTableModel) tblEmp.getModel();
 
-        varName1.setText(model.getValueAt(selectRowView,0).toString());
-        varId1.setText(model.getValueAt(selectRowView,1).toString());
-        varAge1.setText(model.getValueAt(selectRowView,2).toString());
-        varGender1.setText(model.getValueAt(selectRowView,3).toString());
-        varDate1.setText(model.getValueAt(selectRowView,4).toString());
-        varLevel1.setText(model.getValueAt(selectRowView,5).toString());
-        varInfo1.setText(model.getValueAt(selectRowView,6).toString());
-        varTitle1.setText(model.getValueAt(selectRowView,7).toString());
-        varPhone1.setText(model.getValueAt(selectRowView,8).toString());
-        varMail1.setText(model.getValueAt(selectRowView,9).toString());
+        
 
         model.setValueAt(varName1.getText(),tblEmp.getSelectedRow(),0);
         model.setValueAt(varId1.getText(),tblEmp.getSelectedRow(),1);
@@ -377,6 +369,17 @@ public class viewProfile extends javax.swing.JPanel {
         model.setValueAt(varTitle1.getText(),tblEmp.getSelectedRow(),7);
         model.setValueAt(varPhone1.getText(),tblEmp.getSelectedRow(),8);
         model.setValueAt(varMail1.getText(),tblEmp.getSelectedRow(),9);
+        
+        varName1.setText("");
+        varId1.setText("");
+        varAge1.setText("");
+        varGender1.setText("");
+        varDate1.setText("");
+        varLevel1.setText("");
+        varInfo1.setText("");
+        varTitle1.setText("");
+        varPhone1.setText("");
+        varMail1.setText("");
     }//GEN-LAST:event_varUpdateActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
@@ -422,6 +425,7 @@ public class viewProfile extends javax.swing.JPanel {
             ImageIcon icon = new ImageIcon(photo);
             JLabel label = new JLabel(icon);
             viewImgFrame.add(label);
+            
             viewImgFrame.pack();
             viewImgFrame.setVisible(true);
         }catch (IOException e){
@@ -429,6 +433,23 @@ public class viewProfile extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(viewPhoto, "Error while displaying Image");
         }
     }//GEN-LAST:event_viewPhotoActionPerformed
+
+    private void tblEmpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblEmpMouseClicked
+        // TODO add your handling code here:
+        DefaultTableModel model=(DefaultTableModel) tblEmp.getModel();
+        int selectRowView=tblEmp.getSelectedRow();
+        varName1.setText(model.getValueAt(selectRowView,0).toString());
+        varId1.setText(model.getValueAt(selectRowView,1).toString());
+        varAge1.setText(model.getValueAt(selectRowView,2).toString());
+        varGender1.setText(model.getValueAt(selectRowView,3).toString());
+        varDate1.setText(model.getValueAt(selectRowView,4).toString());
+        varLevel1.setText(model.getValueAt(selectRowView,5).toString());
+        varInfo1.setText(model.getValueAt(selectRowView,6).toString());
+        varTitle1.setText(model.getValueAt(selectRowView,7).toString());
+        varPhone1.setText(model.getValueAt(selectRowView,8).toString());
+        varMail1.setText(model.getValueAt(selectRowView,9).toString());
+        
+    }//GEN-LAST:event_tblEmpMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

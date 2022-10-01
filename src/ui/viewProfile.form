@@ -34,20 +34,13 @@
                       </Group>
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="varId1" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="varAge1" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="varGender1" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="varName1" alignment="1" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="varDate1" min="-2" pref="116" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="varId1" alignment="0" pref="96" max="32767" attributes="0"/>
+                          <Component id="varAge1" alignment="0" max="32767" attributes="0"/>
+                          <Component id="varGender1" alignment="0" max="32767" attributes="0"/>
+                          <Component id="varName1" alignment="1" max="32767" attributes="0"/>
+                          <Component id="varDate1" max="32767" attributes="0"/>
                       </Group>
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
                           <Component id="varLevel" alignment="0" max="32767" attributes="0"/>
                           <Component id="varInfo" alignment="0" max="32767" attributes="0"/>
@@ -300,6 +293,9 @@
               <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblEmpMouseClicked"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
